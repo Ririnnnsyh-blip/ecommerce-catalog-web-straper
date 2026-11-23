@@ -57,15 +57,7 @@ for page in range(1,51):
         print(f"Selesai memproses {page} halaman ({len(products)} produk) ...")
 
 # Simpan ke DataFrame Pandas
-df = pd.DataFrame(products)
-
-#Ekspor ke excel dan CSV
-df.to_excel("books_catalog_1000.xlsx", index=False)
-df.to_csv("books_catalog_1000.csv", index=False)
-
-elapsed = round(time.time() - start_time, 2)
-print(f"\nSelesai! {len(df)} produk berhasil die[books_catalog_1000.xlsx](https://github.com/user-attachments/files/35255302/books_catalog_1000.xlsx)
-kstrak dalam {elapsed} detik.")
+(https://github.com/user-attachments/files/35255302/books_catalog_1000.xlsx)
 
 <img width="1915" height="1004" alt="preview-catalog" src="https://github.com/user-attachments/assets/93290298-8740-42e9-9350-70d6bfded514" />
 
