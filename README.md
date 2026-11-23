@@ -1,29 +1,6 @@
 [scraper.py](https://github.com/user-attachments/files/35255298/scraper.py)
 # ecommerce-catalog-web-straper
-import time
-import pandas as pd
-import requests
-from bs4 import BeautifulSoup
-
-# Mapping teks rating menjadi angka agar mudah dianalisis klien
-RATING_MAP = {"one": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}
-base_url = "https://books.toscrape.com/catalogue/page-{}.html"
-products = []
-start_time = time.time()
-print("Memulai scrapping 1.000 produck...")
-# Loop halaman 1 sampai 50(masing-masing 20 produk = 1.000)
-for page in range(1,51):
-    url = base_url.format(page)
-    try:
-        response = requests.get(url, timeout=15)
-    except requests.RequestException as e:
-        print(f"Error koneksi halaman {page}: {e}")
-        continue
-    response.encoding = "utf-8" 
-    if response.status_code != 200:
-        print(f"Gagal mengakses halaman {page} (status: {response.status_code})")
-        # Memastikan simbol mata uang £ terbaca rapih
-        continue
+Python web scraper built with requests, BeautifulSoup, and pandas to extract book catalog data (Product Name, Price (GBP), Rating (1-5), Stock Status, and Products URL) across paginated catalog pages, clean price and star-rating values, and export structured datasets to Excel (.xlsx) and CSV (.csv).
 
     soup = BeautifulSoup(response.text, "html.parser")
     items = soup.find_all("article", class_="product_pod")
