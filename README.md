@@ -33,8 +33,8 @@ Python web scraper built with requests, BeautifulSoup, and pandas to extract boo
     if page % 10 == 0:
         print(f"Selesai memproses {page} halaman ({len(products)} produk) ...")
 
-# Simpan ke DataFrame Pandas
+# Excel
 (https://github.com/user-attachments/files/35255302/books_catalog_1000.xlsx)
-
+# Preview
 <img width="1915" height="1004" alt="preview-catalog" src="https://github.com/user-attachments/assets/93290298-8740-42e9-9350-70d6bfded514" />
 
